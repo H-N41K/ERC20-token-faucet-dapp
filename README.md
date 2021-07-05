@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 🚰 ERC-20 Token Faucet dApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single page dApp that provides a faucet service, which dispenses FCT(ERC-20) tokens.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ⏱ Instructions to run the dApp:
 
-### `yarn start`
+First, you'll need [NodeJS>=10](https://nodejs.org/en/download/) plus [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [Git](https://git-scm.com/downloads) installed.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+💾 Clone/fork repo and then install:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+git clone https://github.com/H-N41K/ERC20-token-faucet-dapp.git
 
-### `yarn test`
+cd ERC20-token-faucet-dapp
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm install
+```
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the React App ⚛️:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+⛓ Start your local blockchain powered by 👷‍♀️[Hardhat](https://hardhat.org/):
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npx hardhat node
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Note**: You'll need to run this command in a new terminal window
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+⚙️ Compile your contracts:
 
-## Learn More
+```
+npx hardhat compile
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🚢 Deploy your contracts to the frontend:
 
-### Code Splitting
+```
+npx hardhat run scripts/deploy.js --network localhost
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+Here's how the UI looks when the page fully loads:
+<kbd>
+![Preview of UI](/img/UI.jpg)
+</kbd>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 Credits
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The code in this repo is from [@Richard Melkonian](https://github.com/rvmelkonian)'s article titled ["Ethereum Dapp Crash Course: Make an ERC20 token faucet + Frontend"](https://dev.to/richardmelko/ethereum-dapp-crash-course-make-an-erc20-token-faucet-frontend-2m43).
